@@ -4,8 +4,6 @@ export default function ({ $axios, store, $toast, route, redirect, $router }) {
 
   $axios.onError(({response}) => {
     if (response.status === 401 || response.data.message === 'User is not authorized'){
-      // redirect('/auth/logout')
-      console.log('asd')
       redirect('/auth/logout')
       $toast.warning('Please log-in')
       return
